@@ -1,0 +1,37 @@
+name: clean_architecture_tdd
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # service locator
+  get_it: ^7.6.0
+  # bloc for state management
+  flutter_bloc: ^8.1.2
+  # value equality
+  equatable: ^2.0.5
+  # funcional programming thingies
+  dartz: ^0.10.1
+  # remote api
+  connectivity_plus: ^4.0.0
+  http: ^0.13.6
+  # local cache
+  shared_preferences: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # linter
+  flutter_lints: ^2.0.0
+  # mocks for testing
+  mockito: ^5.4.0
+  # code generation 
+  build_runner: ^2.3.3
+
+flutter:
+  uses-material-design: true
