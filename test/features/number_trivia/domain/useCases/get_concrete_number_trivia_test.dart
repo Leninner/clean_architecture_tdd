@@ -21,12 +21,12 @@ void main() {
   // final means that the variable will be initialized immediately
   // const means that the variable will be initialized immediately and will not change
   late MockNumberTriviaRepositoryMock numberTriviaRepositoryMock;
-  late GetConcreteRandomNumberTrivia useCase;
+  late GetConcreteNumberTrivia useCase;
 
   // a function that will be called before each test
   setUp(() {
     numberTriviaRepositoryMock = MockNumberTriviaRepositoryMock();
-    useCase = GetConcreteRandomNumberTrivia(numberTriviaRepositoryMock);
+    useCase = GetConcreteNumberTrivia(numberTriviaRepositoryMock);
   });
 
   const tNumber = 1;

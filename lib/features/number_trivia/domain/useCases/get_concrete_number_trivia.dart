@@ -5,10 +5,10 @@ import 'package:clean_architecture_tdd/features/number_trivia/domain/repositorie
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-class GetConcreteRandomNumberTrivia implements UseCase<NumberTrivia, Params> {
+class GetConcreteNumberTrivia implements UseCase<NumberTrivia, Params> {
   final NumberTriviaRepository repository;
 
-  GetConcreteRandomNumberTrivia(this.repository);
+  GetConcreteNumberTrivia(this.repository);
 
   @override
   Future<Either<Failure, NumberTrivia>> call(

@@ -1,7 +1,7 @@
 import 'package:clean_architecture_tdd/core/useCases/use_case.dart';
 import 'package:clean_architecture_tdd/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:clean_architecture_tdd/features/number_trivia/domain/repositories/number_trivia_repository.dart';
-import 'package:clean_architecture_tdd/features/number_trivia/domain/useCases/get_concrete_random_trivia.dart';
+import 'package:clean_architecture_tdd/features/number_trivia/domain/useCases/get_random_trivia.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -22,12 +22,12 @@ void main() {
   // final means that the variable will be initialized immediately
   // const means that the variable will be initialized immediately and will not change
   late MockNumberTriviaRepositoryMock numberTriviaRepositoryMock;
-  late GetConcreteRandomNumberTrivia useCase;
+  late GetRandomNumberTrivia useCase;
 
   // a function that will be called before each test
   setUp(() {
     numberTriviaRepositoryMock = MockNumberTriviaRepositoryMock();
-    useCase = GetConcreteRandomNumberTrivia(numberTriviaRepositoryMock);
+    useCase = GetRandomNumberTrivia(numberTriviaRepositoryMock);
   });
 
   const tNumberTrivia = NumberTrivia(text: 'test', number: 1);
