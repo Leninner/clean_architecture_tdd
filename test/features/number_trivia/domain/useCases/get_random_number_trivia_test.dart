@@ -7,10 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '_mocks_/get_concrete_number_trivia_test.mocks.dart';
-
-class NumberTriviaRepositoryMock extends Mock
-    implements NumberTriviaRepository {}
+import '__mocks__/get_concrete_number_trivia_test.mocks.dart';
 
 /// To mock the repository, we need to create a mock class that extends the
 /// repository class. We can do this manually, and then we need to use the
@@ -21,12 +18,12 @@ void main() {
   // late means that the variable will be initialized later
   // final means that the variable will be initialized immediately
   // const means that the variable will be initialized immediately and will not change
-  late MockNumberTriviaRepositoryMock numberTriviaRepositoryMock;
+  late MockNumberTriviaRepository numberTriviaRepositoryMock;
   late GetRandomNumberTrivia useCase;
 
   // a function that will be called before each test
   setUp(() {
-    numberTriviaRepositoryMock = MockNumberTriviaRepositoryMock();
+    numberTriviaRepositoryMock = MockNumberTriviaRepository();
     useCase = GetRandomNumberTrivia(numberTriviaRepositoryMock);
   });
 
