@@ -10,7 +10,7 @@ import 'package:clean_architecture_tdd/features/number_trivia/data/datasources/n
     as _i5;
 import 'package:clean_architecture_tdd/features/number_trivia/data/models/number_trivia_model.dart'
     as _i2;
-import 'package:clean_architecture_tdd/features/number_trivia/domain/repositories/number_trivia_remote_data_source.dart'
+import 'package:clean_architecture_tdd/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
