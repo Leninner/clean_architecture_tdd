@@ -15,6 +15,9 @@ class Loaded extends NumberTriviaState {
   final NumberTrivia trivia;
 
   const Loaded({required this.trivia}) : super();
+
+  @override
+  List<Object> get props => [trivia];
 }
 
 class Error extends NumberTriviaState {
