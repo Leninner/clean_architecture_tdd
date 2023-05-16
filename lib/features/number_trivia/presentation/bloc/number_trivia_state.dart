@@ -21,4 +21,7 @@ class Error extends NumberTriviaState {
   final String message;
 
   const Error({required this.message}) : super();
+
+  @override
+  List<Object> get props => [message];
 }
