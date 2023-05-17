@@ -2,6 +2,41 @@
 
 ## Dependency Injection
 
+Package used: [get_it](https://pub.dev/packages/get_it)
+
+A dependency injection is a technique where one object supplies the dependencies of another object. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it.
+
+### Best practices
+
+- Use a dependency injection container to manage the dependencies.
+- Register the dependencies in the container.
+- Resolve the dependencies from the container.
+- Use a singleton for the container.
+- Use a factory to create the dependencies.
+- Use a factory to create the container.
+
+### Hands on
+
+Create a file called `injection_container.dart` in the `lib` folder.
+
+```dart
+import 'package:get_it/get_it.dart';
+
+final sl = GetIt.instance;
+
+Future<void> init() async {
+  //! Features - Number Trivia
+  // Bloc
+  sl.registerFactory(
+    () => NumberTriviaBloc(
+      concrete: sl<type>(),
+      inputConverter: sl<type>(),
+      random: sl<type>(),
+    ),
+  );
+}
+```
+
 ## Mocks
 
 - [Mockito documentation](https://pub.dev/packages/mockito)
