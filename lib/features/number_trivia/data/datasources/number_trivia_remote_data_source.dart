@@ -24,12 +24,16 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
       _getTriviaFromUrl('http://numbersapi.com/random');
 
   Future<NumberTriviaModel> _getTriviaFromUrl(String url) async {
-    final response = await client.get(Uri.parse(url), headers: {
-      'Content-Type': 'application/json',
-    });
+    try {
+      final response = await client.get(Uri.parse(url), headers: {
+        'Content-Type': 'application/json',
+      });
 
-    if (response.statusCode != 200) throw ServerException();
+      if (response.statusCode != 200) throw ServerException();
 
-    return NumberTriviaModel.fromJson(json.decode(response.body));
+      return NumberTriviaModel.fromJson(json.decode(response.body));
+    } catch (e) {
+      throw ServerException();
+    }
   }
 }

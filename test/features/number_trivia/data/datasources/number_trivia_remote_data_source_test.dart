@@ -81,6 +81,18 @@ void main() {
         // assert
         expect(() => call(tNumber), throwsA(isA<ServerException>()));
       });
+
+      test('should throw an error when the fetch fails', () async {
+        //arrange
+        when(mockHttpClient.get(any, headers: anyNamed('headers')))
+            .thenThrow(Exception());
+
+        // act
+        final call = dataSource.getConcreteNumberTrivia;
+
+        // assert
+        expect(() => call(tNumber), throwsA(isA<ServerException>()));
+      });
     });
   });
 
