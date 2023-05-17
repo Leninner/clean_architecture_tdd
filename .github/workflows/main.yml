@@ -1,0 +1,13 @@
+on: push
+name: Test, Build and Release apk
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '3.10.0'
+    - run: flutter pub get
+    - run: flutter test --coverage

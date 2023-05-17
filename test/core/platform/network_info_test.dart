@@ -16,7 +16,7 @@ void main() {
     networkInfoImpl = NetworkInfoImpl(mockConnectivity);
   });
 
-  group('isConnected', () async {
+  group('isConnected', () {
     test(
       'should forward the call to Connectivity.checkConnectivity method',
       () async {
