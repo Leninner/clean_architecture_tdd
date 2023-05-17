@@ -1,8 +1,12 @@
-on: push
-name: Test, Build and Release apk
+on: 
+  pull_request:
+    branches:
+      - main
+
+name: Test app
 jobs:
   test:
-    name: Test
+    name: Test coverage
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
