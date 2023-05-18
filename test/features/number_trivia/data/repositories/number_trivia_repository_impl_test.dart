@@ -16,7 +16,7 @@ import 'package:mockito/mockito.dart';
   MockSpec<NumberTriviaLocalDataSource>(as: #LocalDataSourceMock),
   MockSpec<NetworkInfo>(as: #NetworkInfoMock),
 ])
-import '__mocks__/number_trivia_repository_impl_test.mocks.dart';
+import 'number_trivia_repository_impl_test.mocks.dart';
 
 void main() {
   late NumberTriviaRepositoryImpl repositoryImpl;

@@ -45,3 +45,6 @@ app.*.map.json
 .idea
 .vscode
 coverage
+
+# mocks
+/**/*.mocks.dart

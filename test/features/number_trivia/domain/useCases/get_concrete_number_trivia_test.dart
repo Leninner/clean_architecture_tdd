@@ -6,14 +6,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import 'get_random_number_trivia_test.mocks.dart';
+
 /// To mock the repository, we need to create a decorator called
 /// @GenerateNiceMocks annotation to generate the mock class.
 /// After that, we need to create the actual files by running
 /// flutter pub run build_runner build --delete-conflicting-outputs
 
 @GenerateNiceMocks([MockSpec<NumberTriviaRepository>()])
-import '__mocks__/get_concrete_number_trivia_test.mocks.dart';
-
 void main() {
   // late means that the variable will be initialized later
   // final means that the variable will be initialized immediately

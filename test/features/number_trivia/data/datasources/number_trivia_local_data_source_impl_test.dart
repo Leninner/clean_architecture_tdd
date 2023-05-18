@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
-import '__mocks__/number_trivia_local_data_source_impl_test.mocks.dart';
+import 'number_trivia_local_data_source_impl_test.mocks.dart';
 
 @GenerateNiceMocks([MockSpec<SharedPreferences>()])
 void main() {

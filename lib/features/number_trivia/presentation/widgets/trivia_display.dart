@@ -11,7 +11,7 @@ class TriviaDisplay extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height / 3,
       child: Column(
-        children: [
+        children: <Widget>[
           Text(
             numberTrivia.number.toString(),
             style: const TextStyle(
@@ -19,6 +19,7 @@ class TriviaDisplay extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
+            textDirection: TextDirection.ltr,
           ),
           Expanded(
             child: Center(
@@ -29,6 +30,7 @@ class TriviaDisplay extends StatelessWidget {
                     fontSize: 25,
                   ),
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.ltr,
                 ),
               ),
             ),

@@ -7,11 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '__mocks__/get_concrete_number_trivia_test.mocks.dart';
-
-/// To mock the repository, we need to create a mock class that extends the
-/// repository class. We can do this manually, and then we need to use the
-/// @GenerateNiceMocks annotation to generate the mock class.
+import 'get_random_number_trivia_test.mocks.dart';
 
 @GenerateNiceMocks([MockSpec<NumberTriviaRepository>()])
 void main() {
@@ -21,7 +17,6 @@ void main() {
   late MockNumberTriviaRepository numberTriviaRepositoryMock;
   late GetRandomNumberTrivia useCase;
 
-  // a function that will be called before each test
   setUp(() {
     numberTriviaRepositoryMock = MockNumberTriviaRepository();
     useCase = GetRandomNumberTrivia(numberTriviaRepositoryMock);
