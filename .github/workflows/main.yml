@@ -14,4 +14,4 @@ jobs:
       with:
         flutter-version: '3.10.0'
     - run: flutter pub get
-    - run: flutter test --coverage
+    - run: flutter test --k
