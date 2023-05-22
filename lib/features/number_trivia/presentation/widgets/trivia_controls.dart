@@ -21,6 +21,7 @@ class TriviaControls extends StatelessWidget {
           onChanged: (value) {
             inputStr = value;
           },
+          key: const Key('concrete_search_field'),
         ),
         const SizedBox(height: 10),
         Row(
