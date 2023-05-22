@@ -1,11 +1,11 @@
 import 'package:clean_architecture_tdd/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
 import 'package:clean_architecture_tdd/features/number_trivia/presentation/widgets/trivia_controls.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../../../utils/widget_setup.dart';
 import 'trivia_controls_test.mocks.dart';
 
 @GenerateNiceMocks([MockSpec<NumberTriviaBloc>(as: #NumberTriviaBlocMock)])
@@ -16,14 +16,6 @@ void main() {
     return MaterialApp(
       home: Scaffold(body: TriviaControls()),
     );
-  }
-
-  setUpRendererWithBloc() {
-    return BlocProvider<NumberTriviaBloc>(
-        create: (context) => numberTriviaBlocMock,
-        child: MaterialApp(
-          home: Scaffold(body: TriviaControls()),
-        ));
   }
 
   setUp(() {
@@ -72,7 +64,10 @@ void main() {
           (WidgetTester tester) async {
         when(numberTriviaBlocMock.state).thenReturn(Loading());
         // arrange
-        await tester.pumpWidget(setUpRendererWithBloc());
+        await tester.pumpWidget(widgetSetUpWithBloc<NumberTriviaBloc>(
+          numberTriviaBlocMock,
+          TriviaControls(),
+        ));
 
         await tester.enterText(
             find.byKey(
@@ -95,7 +90,10 @@ void main() {
           (WidgetTester tester) async {
         when(numberTriviaBlocMock.state).thenReturn(Loading());
         // arrange
-        await tester.pumpWidget(setUpRendererWithBloc());
+        await tester.pumpWidget(widgetSetUpWithBloc<NumberTriviaBloc>(
+          numberTriviaBlocMock,
+          TriviaControls(),
+        ));
 
         // act
         await tester.tap(find.text('Get random trivia'));
